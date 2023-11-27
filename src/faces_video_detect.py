@@ -14,7 +14,7 @@ cap = cv2.VideoCapture(0)
 while True:
     # Read the frame
     _, img = cap.read()
-    # Convert to grayscale
+    # Escala de grises
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # Detect the faces
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
@@ -29,8 +29,8 @@ while True:
         break
 # Release the VideoCapture object
 cap.release()
-
-"""import os
+"""
+import os
 import cv2
 import math
 import argparse
@@ -73,7 +73,7 @@ genderModel=(os.path.join(dir_path, "..", "xml", "gender_net.caffemodel"))
 
 MODEL_MEAN_VALUES=(78.4263377603, 87.7689143744, 114.895847746)
 ageList=['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
-genderList=['Male','Female']
+genderList=['Hombre','Mujer']
 
 faceNet=cv2.dnn.readNet(faceModel,faceProto)
 ageNet=cv2.dnn.readNet(ageModel,ageProto)
@@ -108,4 +108,6 @@ while cv2.waitKey(1)<0 :
         print(f'Age: {age[1:-1]} years')
 
         cv2.putText(resultImg, f'{gender}, {age}', (faceBox[0], faceBox[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,255), 2, cv2.LINE_AA)
-        cv2.imshow("Detecting age and gender", resultImg)"""
+        cv2.imshow("Detecting age and gender", resultImg)
+    """
+    
