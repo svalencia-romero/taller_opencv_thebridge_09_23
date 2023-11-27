@@ -2,16 +2,16 @@ import cv2
 import numpy as np
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
+
 # Cargar el clasificador preentrenado para detección de coches
-# Load the cascade
 
 car_cascade = cv2.CascadeClassifier(os.path.join(dir_path, "..", "xml", "haarcascade_car.xml"))
 
 # Iniciar la cámara (0 indica la cámara predeterminada)
 # cap = cv2.VideoCapture(0)
 # To use a video file as input 
-cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "video_2.mp4"))
-
+# https://www.pexels.com/video/a-biker-traversing-a-road-built-on-mountain-sides-3055765/
+cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "video_3.mp4"))
 
 while True:
     # Capturar el fotograma de la cámara
@@ -21,7 +21,7 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Detectar coches en la imagen
-    cars = car_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(25, 25))
+    cars = car_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=7, minSize=(50, 50))
 
     # Dibujar rectángulos alrededor de los coches detectados
     for (x, y, w, h) in cars:
@@ -30,9 +30,9 @@ while True:
     # Mostrar el resultado
     cv2.imshow('Car Detection', frame)
 
-    # Romper el bucle si se presiona la tecla 'q'
+    # Para salir del video pulsa "q"
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
-# Liberar la captura de la cámara y cerrar las ventanas
+# Cerrar las ventanas
 cap.release()
