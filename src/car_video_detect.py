@@ -11,7 +11,7 @@ car_cascade = cv2.CascadeClassifier(os.path.join(dir_path, "..", "xml", "haarcas
 # cap = cv2.VideoCapture(0)
 # To use a video file as input 
 # https://www.pexels.com/video/a-biker-traversing-a-road-built-on-mountain-sides-3055765/
-cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "video_3_1.mp4"))
+cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "Video_3_1.mp4"))
 
 while True:
     # Capturar el fotograma de la cámara
@@ -21,7 +21,10 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Detectar coches en la imagen
-    cars = car_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=7, minSize=(50, 50))
+    # scaleFactor: Este parámetro compensa la reducción de tamaño del objeto para hacer coincidir mejor las características con el clasificador. Un valor más pequeño proporciona una detección más precisa.
+    # minNeighbors: Este parámetro especifica cuántos vecinos debe tener cada rectángulo candidato para retenerlo. Este valor es importante para eliminar falsos positivos. Cuanto mayor sea el valor, menos detecciones falsas se retendrán.
+    # minSize: Este parámetro especifica el tamaño mínimo del objeto. Los rectángulos más pequeños que este tamaño son ignorados. 
+    cars = car_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=7, minSize=(50, 50)) 
 
     # Dibujar rectángulos alrededor de los coches detectados
     for (x, y, w, h) in cars:
