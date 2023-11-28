@@ -1,4 +1,3 @@
-# Comprobado ok
 import os
 import cv2
 

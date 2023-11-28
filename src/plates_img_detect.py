@@ -1,4 +1,3 @@
-# img detect ok
 import cv2
 import os
 import imutils
