@@ -1,4 +1,4 @@
-# Taller de OpenCV: Detección de Matrículas, Predicción de Género y Procesamiento de Imágenes
+# Taller de OpenCV: Detección de Matrículas, Género y Procesamiento de Imágenes
 
 ¡Bienvenido al taller de OpenCV! En este taller, exploraremos diversas aplicaciones de OpenCV, una poderosa biblioteca de visión por computadora. Durante el taller, abordaremos tres áreas emocionantes: Detección de Matrículas, Modelo de Predicción de Género y Procesamiento de Imágenes. Estos temas proporcionarán una comprensión práctica de cómo OpenCV puede aplicarse en situaciones del mundo real.
 
@@ -10,7 +10,7 @@ En esta sección, aprenderemos a utilizar OpenCV para detectar matrículas en im
 ![imagen_1](img/img_made_nb/003.png) 
 ![imagen_2](img/img_made_nb/003_1.png)
 
-### 2. Modelo de Predicción de Género
+### 2. Modelo de detección de Género
 En esta parte del taller, nos sumergiremos en el desarrollo de un modelo de predicción de género utilizando OpenCV. Exploraremos la detección facial y aprenderemos a entrenar un modelo para predecir si una cara pertenece a un hombre o una mujer. Utilizaremos técnicas de aprendizaje automático para crear y evaluar nuestro modelo.
 
 ![imagen_3](img/img_made_nb/001_1.png) 
