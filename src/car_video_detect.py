@@ -11,7 +11,7 @@ car_cascade = cv2.CascadeClassifier(os.path.join(dir_path, "..", "xml", "haarcas
 # cap = cv2.VideoCapture(0)
 # To use a video file as input 
 # https://www.pexels.com/video/a-biker-traversing-a-road-built-on-mountain-sides-3055765/
-cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "Video_3_1.mp4"))
+cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "Video_3_1_res.mp4"))
 
 while True:
     # Capturar el fotograma de la cámara
