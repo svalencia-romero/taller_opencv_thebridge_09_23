@@ -12,21 +12,7 @@ cap = cv2.VideoCapture(0)
 # Utilizar video como input 
 # cap = cv2.VideoCapture(os.path.join(dir_path, "..", "video", "video_2.mp4"))
 
-while True:
-    # Lectura de cada frame
-    _, img = cap.read()
-    # Escala de grises
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # Detector de caras
-    faces = face_cascade.detectMultiScale(gray, 1.2, 2)
-    # Dibujar rectangulo en cara
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-    # Mostrar
-    cv2.imshow('img', img)
-    # Parar con q
-    if cv2.waitKey(10) & 0xFF == ord('q'):
-        break
+
         
 # Release the VideoCapture object
 cap.release()
